@@ -28,18 +28,21 @@ const displaySerachResult = phones => {
 
         const searchResult = document.getElementById('search-result');
         const div = document.createElement('div')
-        div.classList.add('card')
+        div.classList.add('col')
         div.innerHTML = `
-                <div class=" col text-center m-auto bg-dark>
-                    <div class="card ">
-                        <img src="${phone.image}" class="card-img-top w-50 p-2" alt="...">
+       
+                <div class="col text-center mx-auto">
+                    <div class="card  ">
+                        <img src="${phone.image}" class="card-img-top w-50 p-2 text-center mx-auto" alt="...">
                         <div class="card-body">
                             <h4> Phone Name : ${phone.phone_name} </h4>
                             <h5 class="card-title">Brand: ${phone.brand}</h5>
                             <button onclick="PhoneInfo('${phone.slug}')" class="btn btn-success px-5 mt-2"> Details</button>
                         </div
                     </div> 
+              
                 </div>
+        
     `;
         searchResult.appendChild(div);
 
