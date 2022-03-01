@@ -5,6 +5,8 @@ const searchAllPhone = () => {
     document.getElementById('search-result').innerHTML = '';
     document.getElementById('phn-info').innerHTML = '';
     document.getElementById('iphn-mini').innerHTML = '';
+    // sppiner
+    document.getElementById('spinner').style.display = "block";
 
 
 
@@ -21,7 +23,7 @@ const searchAllPhone = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.status === false) {
-                    alert('Nod data found');
+                    alert('No Phone found');
                 }
                 else {
                     displaySerachResult(data.data.slice(0, 20))
@@ -35,9 +37,12 @@ const displaySerachResult = phones => {
     for (const phone of phones) {
         // console.log(phone);
 
+
         const searchResult = document.getElementById('search-result');
         const div = document.createElement('div')
+
         div.classList.add('col')
+        document.getElementById('spinner').style.display = "none";
         div.innerHTML = `
        
                 <div class="col text-center mx-auto">
@@ -79,6 +84,8 @@ const PhoneInfo = (info) => {
 // iphn13 mini data
 const iphnMiniInfo = (idInfomini) => {
     // console.log(idInfomini);
+    // sppiner
+    document.getElementById('spinner').style.display = "block";
     document.getElementById('phn-info').innerHTML = "";
     document.getElementById('iphn-mini').innerHTML = `
     <div class="card mb-3 w-50 mx-auto">

@@ -10,3 +10,7 @@ h1{
 .input-group{
     width: 40%;
 }
+#spinner{
+    display: none;
+    background-color: rgb(36, 35, 35);
+}
