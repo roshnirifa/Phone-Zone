@@ -85,7 +85,6 @@ const PhoneInfo = (info) => {
 const iphnMiniInfo = (idInfomini) => {
     // console.log(idInfomini);
     // sppiner
-    document.getElementById('spinner').style.display = "block";
     document.getElementById('phn-info').innerHTML = "";
     document.getElementById('iphn-mini').innerHTML = `
     <div class="card mb-3 w-50 mx-auto">
