@@ -69,7 +69,7 @@ const showPhoneInfo = (idInfo) => {
                     <img src="${idInfo.image}" class="card-img-top w-50 mx-auto p-4" alt="...">
                     <div class="card-body">
                         <h2> Phone Name : ${idInfo.name} </h2>
-                        <h4 id="releaseDate"> Release Date :${idInfo.releaseDate}</h4
+                        <h4 id="releaseDate"> Release Date :${idInfo.releaseDate ? `${idInfo.releaseDate}` : `Not Found`}</h4>
                     <p>
                         <h5>Main Features:</h5>
                             <b>Stroages:</b> ${idInfo.mainFeatures.storage} <br>
