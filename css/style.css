@@ -14,3 +14,9 @@ h1{
     display: none;
     background-color: rgb(36, 35, 35);
 }
+#error{
+    display: none;
+}
+#search-error{
+    display: none;
+}

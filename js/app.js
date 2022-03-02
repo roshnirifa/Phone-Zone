@@ -13,7 +13,9 @@ const searchAllPhone = () => {
     // search error
 
     if (searchFieldText == '') {
-        alert('please write something to display');
+        // alert('please write something to display');
+        document.getElementById('error').style.display = "block";
+
 
     }
 
@@ -24,7 +26,7 @@ const searchAllPhone = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.status === false) {
-                    alert('No Phone found');
+                    document.getElementById('search-error').style.display = 'block'
                 }
                 else {
                     displaySerachResult(data.data.slice(0, 20))
@@ -41,6 +43,8 @@ const displaySerachResult = phones => {
         const div = document.createElement('div')
         div.classList.add('col')
         document.getElementById('spinner').style.display = "none";
+        document.getElementById('error').style.display = "none";
+        document.getElementById('search-error').style.display = 'none';
         div.innerHTML = `
        
                 <div class="col text-center mx-auto">
@@ -85,7 +89,7 @@ const iphnMiniInfo = (idInfomini) => {
     // sppiner
     document.getElementById('phn-info').innerHTML = "";
     document.getElementById('iphn-mini').innerHTML = `
-    <div class="card mb-3 w-50 mx-auto" >
+    <div class="card mb-3 w-100 mx-auto" >
         <img src="${idInfomini.image}" class="card-img-top w-50 mx-auto p-4" alt="...">
         <div class="card-body">
             <h2> Phone Name : ${idInfomini.name} </h2>
@@ -118,7 +122,7 @@ const showPhoneInfo = (idInfo) => {
     // console.log(idInfo);
     document.getElementById('iphn-mini').innerHTML = '';
     document.getElementById('phn-info').innerHTML = `
-        <div class="card mb-3 w-50 mx-auto">
+        <div class="card mb-3 w-100 mx-auto">
             <img src="${idInfo.image}" class="card-img-top w-50 mx-auto p-4" alt="...">
             <div class="card-body">
                 <h2> Phone Name : ${idInfo.name} </h2>
